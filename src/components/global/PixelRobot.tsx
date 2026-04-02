@@ -29,6 +29,7 @@ export default function PixelRobot() {
   const [facingRight, setFacingRight] = useState(true);
   const [bubbleMessage, setBubbleMessage] = useState<string | null>(null);
   const [action, setAction] = useState<Action>("flying");
+  const [speed, setSpeed] = useState(0.003);
   
   const tRef = useRef(0);
   const speedRef = useRef(0.003);
@@ -108,10 +109,10 @@ export default function PixelRobot() {
           }
         }
 
-        setPosition((prev) => {
+        setPosition(() => {
            return {
              x: targetX,
-             y: action === "sitting" ? prev.y : targetY
+             y: targetY
            };
         });
 
@@ -152,9 +153,11 @@ export default function PixelRobot() {
       setAction("flying");
       setBubbleMessage("Catch me if you can! 💨");
       speedRef.current = 0.15; // super fast
+      setSpeed(0.15);
       
       setTimeout(() => {
         speedRef.current = 0.003;
+        setSpeed(0.003);
         setBubbleMessage(null);
       }, 2500);
     } else {
@@ -162,8 +165,10 @@ export default function PixelRobot() {
       setAction("flying");
       setBubbleMessage("JETPACK OVERDRIVE! 🚀");
       speedRef.current = 0.08;
+      setSpeed(0.08);
       setTimeout(() => {
         speedRef.current = 0.003;
+        setSpeed(0.003);
         setBubbleMessage(null);
       }, 2000);
     }
@@ -178,7 +183,7 @@ export default function PixelRobot() {
 
   return (
     <motion.div
-      className="fixed z-[9999] pointer-events-none flex flex-col items-center"
+      className="fixed z-9999 pointer-events-none flex flex-col items-center"
       style={{
         left: 0,
         top: 0,
@@ -198,7 +203,7 @@ export default function PixelRobot() {
           >
             {bubbleMessage}
             <div className="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-purple-500/50" />
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[4px] border-transparent border-t-[#0a0a14] -mt-[1px]" />
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0a0a14] -mt-px" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -223,7 +228,7 @@ export default function PixelRobot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        <svg width="40" height="40" viewBox="0 0 40 40" className="sm:w-[40px] sm:h-[40px] w-[32px] h-[32px]">
+        <svg width="40" height="40" viewBox="0 0 40 40" className="sm:w-10 sm:h-10 w-8 h-8">
           {/* Antenna */}
           <line x1="20" y1="10" x2="20" y2="2" stroke="#6b7280" strokeWidth="2" />
           <circle cx="20" cy="2" r="2" className="animate-pulse fill-pink-500" />
@@ -259,11 +264,11 @@ export default function PixelRobot() {
               <rect x="15" y="32" width="3" height="4" fill="#4b5563" />
               <rect x="22" y="32" width="3" height="4" fill="#4b5563" />
               <g className="animate-[flicker_0.2s_infinite_alternate]">
-                <path d="M15 36 Q16.5 42 18 36 Z" fill={speedRef.current > 0.05 ? "#3b82f6" : "#f97316"} />
-                <path d="M22 36 Q23.5 42 25 36 Z" fill={speedRef.current > 0.05 ? "#3b82f6" : "#f97316"} />
+                <path d="M15 36 Q16.5 42 18 36 Z" fill={speed > 0.05 ? "#3b82f6" : "#f97316"} />
+                <path d="M22 36 Q23.5 42 25 36 Z" fill={speed > 0.05 ? "#3b82f6" : "#f97316"} />
               </g>
               {/* Jetpack Smoke Trail when running really fast */}
-              {speedRef.current > 0.05 && (
+              {speed > 0.05 && (
                 <g className="opacity-50 animate-pulse">
                   <circle cx="16.5" cy="45" r="3" fill="#cbd5e1" />
                   <circle cx="23.5" cy="45" r="3" fill="#cbd5e1" />

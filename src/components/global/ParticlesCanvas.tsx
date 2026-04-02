@@ -77,16 +77,16 @@ export default function ParticlesCanvas() {
           if (y > canvas.height) { y = 0; baseY = y; }
 
           // Cursor interaction dodge
-          let dx = mouse.x - x;
-          let dy = mouse.y - y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
+          const dx = mouse.x - x;
+          const dy = mouse.y - y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
           
           if (distance < mouse.radius) {
-            let forceDirX = dx / distance;
-            let forceDirY = dy / distance;
-            let force = (mouse.radius - distance) / mouse.radius;
-            let dirX = forceDirX * force * density;
-            let dirY = forceDirY * force * density;
+            const forceDirX = dx / distance;
+            const forceDirY = dy / distance;
+            const force = (mouse.radius - distance) / mouse.radius;
+            const dirX = forceDirX * force * density;
+            const dirY = forceDirY * force * density;
             
             x -= dirX;
             y -= dirY;

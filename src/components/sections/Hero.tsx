@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Code2, Mail, ChevronDown } from "lucide-react";
+import { Code2, Mail } from "lucide-react";
 import { Github, Linkedin } from "@/components/icons";
 
 const typewriterLines = [
@@ -71,9 +71,9 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="font-mono text-[var(--color-pink)] text-base md:text-lg h-6 font-semibold">
+            <div className="font-mono text-(--color-pink) text-base md:text-lg h-6 font-semibold">
               {`> `}{typedText}
-              <span className="w-2 inline-block h-4 bg-[var(--color-pink)] ml-1 animate-[blink_1s_infinite] align-middle" />
+              <span className="w-2 inline-block h-4 bg-(--color-pink) ml-1 animate-[blink_1s_infinite] align-middle" />
             </div>
 
             <div className="flex gap-4 mt-4">
@@ -99,7 +99,7 @@ export default function Hero() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <social.icon strokeWidth={1.5} className="w-5 h-5 text-gray-400 group-hover:text-[var(--hover-color)] transition-colors" />
+                  <social.icon strokeWidth={1.5} className="w-5 h-5 text-gray-400 group-hover:text-(--hover-color) transition-colors" />
                 </a>
               ))}
             </div>
@@ -111,7 +111,7 @@ export default function Hero() {
                   e.preventDefault();
                   document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="interactive px-6 py-3 bg-[var(--grad)] text-white font-sans font-bold tracking-widest text-sm rounded transition-transform hover:scale-105 shadow-[0_0_20px_rgba(236,72,153,0.3)]"
+                className="interactive px-6 py-3 bg-(--grad) text-white font-sans font-bold tracking-widest text-sm rounded transition-transform hover:scale-105 shadow-[0_0_20px_rgba(236,72,153,0.3)]"
               >
                 VIEW MY WORK →
               </a>
@@ -147,12 +147,12 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="w-full h-full min-h-[300px] flex items-center justify-center relative pointer-events-none"
+            className="w-full h-full min-h-75 flex items-center justify-center relative pointer-events-none"
           >
             {/* Ambient glow */}
-            <div className="absolute inset-0 max-w-[480px] max-h-[480px] m-auto bg-teal-400/5 rounded-full blur-[80px]" />
+            <div className="absolute inset-0 max-w-120 max-h-120 m-auto bg-teal-400/5 rounded-full blur-[80px]" />
 
-            <svg viewBox="0 0 480 480" className="w-[100%] max-w-[480px] h-auto drop-shadow-2xl -translate-y-12 lg:-translate-y-20">
+            <svg viewBox="0 0 480 480" className="w-full max-w-120 h-auto drop-shadow-2xl -translate-y-12 lg:-translate-y-20">
               {/* Lamp Container (Swinging) */}
               <g className="origin-top animate-[sway_4s_ease-in-out_infinite]">
                 <line x1="240" y1="0" x2="240" y2="80" stroke="#374151" strokeWidth="3" />

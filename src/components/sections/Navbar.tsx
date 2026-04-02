@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -14,16 +14,7 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
     e.preventDefault();
@@ -37,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 flex justify-center py-4 px-4`}
+        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 flex justify-center py-4 px-4`}
       >
         <div 
           className={`flex items-center justify-between w-full transition-all duration-500 max-w-5xl mx-auto bg-[#0a0a14]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-full px-6 py-3`}
@@ -57,10 +48,10 @@ export default function Navbar() {
                 className="font-mono text-[10px] tracking-[2px] text-gray-400 hover:text-white transition-colors relative group"
               >
                 <span className="opacity-0 group-hover:opacity-100 text-purple-500 transition-opacity absolute -left-4">{"//"}</span>
-                <span className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-[var(--grad)] transition-all">
+                <span className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-(--grad) transition-all">
                   {link.name}
                 </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[var(--grad)] transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-(--grad) transition-all group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -92,7 +83,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[95] bg-[#07080f]/95 backdrop-blur-xl flex flex-col items-center justify-center lg:hidden"
+            className="fixed inset-0 z-95 bg-[#07080f]/95 backdrop-blur-xl flex flex-col items-center justify-center lg:hidden"
           >
             <nav className="flex flex-col items-center gap-8">
               {links.map((link, i) => (
@@ -103,7 +94,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleScrollTo(e, link.href)}
-                  className="font-mono text-3xl tracking-widest text-transparent bg-clip-text bg-[var(--grad)]"
+                  className="font-mono text-3xl tracking-widest text-transparent bg-clip-text bg-(--grad)"
                 >
                   {link.name}
                 </motion.a>

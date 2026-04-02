@@ -1,6 +1,5 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
-import ImpactStats from "@/components/sections/ImpactStats";
 import AboutMe from "@/components/sections/AboutMe";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
