@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-grad-start: #7c3aed;
+  --color-grad-mid: #ec4899;
+  --color-grad-end: #f97316;
+
+  --color-purple: #7c3aed;
+  --color-pink: #ec4899;
+  --color-orange: #f97316;
+  --color-teal: #2dd4bf;
+  --color-gold: #f5a623;
+  --color-success: #4ade80;
+  --color-muted: #6b7280;
+
+  --font-mono: var(--font-mono), monospace;
+  --font-sans: var(--font-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-color: #050508;
+    --text-body: #f8f8f8;
+    --grad: linear-gradient(90deg, #7c3aed, #ec4899, #f97316);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-body);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Animated ambient mesh gradient */
+  body::before, body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    opacity: 0.15;
+    animation: drift 20s infinite alternate cubic-bezier(0.5, 0, 0.5, 1);
+  }
+  body::before {
+    top: -10%;
+    left: -10%;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
+  }
+  body::after {
+    bottom: -10%;
+    right: -10%;
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(circle, #f97316 0%, transparent 70%);
+    animation-delay: -10s;
+  }
+
+  @keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(15vw, 15vh) scale(1.1); }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    cursor: none; /* For custom cursor */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-gradient {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient {
+    position: relative;
+    background: var(--bg-color);
+    background-clip: padding-box;
+    border: solid 1px transparent;
+    border-radius: 0.5rem;
+  }
+  
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -1px;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    border-radius: inherit;
+    background: var(--grad);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* Base custom classes to match prompt requirements */
+/* Base custom classes to match prompt requirements */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* Scrollbar styles to match the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+@keyframes blink {
+  0%, 96%, 98% { fill: #4ade80; }
+  97%, 100% { fill: #1f2937; }
+}
+
+@keyframes flicker {
+  0% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(0.6); opacity: 0.7; }
+}
+
+/* Typing effect for the bubble */
+.typing-effect {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 1.5s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
