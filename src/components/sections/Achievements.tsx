@@ -17,13 +17,13 @@ export default function Achievements() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="flex items-center gap-4 mb-16 relative">
-          <div className="absolute -top-16 -left-4 text-[120px] font-sans font-black text-transparent bg-clip-text bg-[var(--grad)] opacity-5 select-none pointer-events-none">
+          <div className="absolute -top-16 -left-4 text-[120px] font-sans font-black text-transparent bg-clip-text bg-(--grad) opacity-5 select-none pointer-events-none">
             06
           </div>
           <h2 className="font-mono text-sm tracking-[4px] text-gray-400">
             <span className="text-purple-500">{"//"}</span> 06. ACHIEVEMENTS
           </h2>
-          <div className="h-[1px] flex-1 bg-gradient-to-r from-purple-500/20 to-transparent" />
+          <div className="h-px flex-1 bg-linear-to-r from-purple-500/20 to-transparent" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -33,25 +33,25 @@ export default function Achievements() {
             
             {/* Events & Hackathons */}
             <div>
-              <h3 className="font-mono tracking-widest text-[#f5a623] mb-6 flex items-center gap-2">
+              <h3 className="font-mono tracking-widest text-gold mb-6 flex items-center gap-2">
                 <span className="text-xl">🏆</span> EVENTS & HACKATHONS
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
                 {/* Connecting Line (hidden on very small mobile) */}
-                <div className="hidden md:block absolute top-[18px] left-[20px] right-[20px] h-0.5 bg-gray-800 z-0" />
+                <div className="hidden md:block absolute top-4.5 left-5 right-5 h-0.5 bg-gray-800 z-0" />
                 
                 {/* Hackathon 1 */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="flex-1 relative z-10 bg-[#0a0a14] border border-[#f5a623]/30 rounded-lg p-6 group interactive hover:border-[#f5a623]"
+                  className="flex-1 relative z-10 bg-[#0a0a14] border border-gold/30 rounded-lg p-6 group interactive hover:border-gold"
                 >
-                  <div className="absolute -top-3 left-6 w-6 h-6 bg-[#0a0a14] border-2 border-[#f5a623] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
-                    <div className="w-2 h-2 bg-[#f5a623] rounded-full" />
+                    <div className="absolute -top-3 left-6 w-6 h-6 bg-[#0a0a14] border-2 border-gold rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                      <div className="w-2 h-2 bg-gold rounded-full" />
                   </div>
-                  <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-[#f5a623] transition-colors">AIM Infynd — 36-Hour AI Agent Hackathon 2026</h4>
+                    <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-gold transition-colors">AIM Infynd — 36-Hour AI Agent Hackathon 2026</h4>
                   <p className="text-sm text-gray-400 leading-relaxed font-mono">Built TeleCorp AI Call Center Copilot — full-stack AI in 36h</p>
                 </motion.div>
 
@@ -91,16 +91,68 @@ export default function Achievements() {
               </div>
             </div>
 
+            {/* Leadership & Soft Skills */}
+            <div>
+              <h3 className="font-mono tracking-widest text-[#ec4899] mb-6 flex items-center gap-2">
+                <span className="text-xl">🎙️</span> LEADERSHIP & MENTORSHIP
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+                <div className="hidden md:block absolute top-4.5 left-5 right-5 h-0.5 bg-gray-800 z-0" />
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="flex-1 relative z-10 bg-[#0a0a14] border border-[#ec4899]/30 rounded-lg p-6 group interactive hover:border-[#ec4899]"
+                >
+                  <div className="absolute -top-3 left-6 w-6 h-6 bg-[#0a0a14] border-2 border-[#ec4899] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                    <div className="w-2 h-2 bg-[#ec4899] rounded-full" />
+                  </div>
+                  <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-[#ec4899] transition-colors">Cluster Event Host</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed font-mono">Hosted 2 major college cluster events as Host Lead at college club— experienced in live communication, stage presence across 500+ attendee gatherings.</p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="flex-1 relative z-10 bg-[#0a0a14] border border-[#8b5cf6]/30 rounded-lg p-6 group interactive hover:border-[#8b5cf6]"
+                >
+                  <div className="absolute -top-3 left-6 w-6 h-6 bg-[#0a0a14] border-2 border-[#8b5cf6] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                     <div className="w-2 h-2 bg-[#8b5cf6] rounded-full" />
+                  </div>
+                  <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-[#8b5cf6] transition-colors">Continuous Learner</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed font-mono">Consistent reader of self-improvement, developed strong habits of empathy, perspective-taking, and articulate expression.</p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="flex-1 relative z-10 bg-[#0a0a14] border border-[#10b981]/30 rounded-lg p-6 group interactive hover:border-[#10b981]"
+                >
+                  <div className="absolute -top-3 left-6 w-6 h-6 bg-[#0a0a14] border-2 border-[#10b981] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                     <div className="w-2 h-2 bg-[#10b981] rounded-full" />
+                  </div>
+                  <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-[#10b981] transition-colors">Tech Mentor</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed font-mono">Proactively guide and mentor junior students — conducting informal sessions on tech, confidence-building, and communication.</p>
+                </motion.div>
+              </div>
+            </div>
+
             {/* Certifications (2x2) */}
             <div>
-              <h3 className="font-mono tracking-widest text-[#2dd4bf] mb-6 flex items-center gap-2">
+              <h3 className="font-mono tracking-widest text-teal mb-6 flex items-center gap-2 mt-12">
                 <span className="text-xl">📜</span> CERTIFICATIONS
               </h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { title: "Build an AI Agent", subtitle: "IBM Certification (2025)", color: "blue", icon: "🤖" },
-                  { title: "Python for Machine Learning", subtitle: "Internship Program (2025)", color: "purple", icon: "🐍" },
+                  { title: "IBM Build AI Agent", subtitle: "IBM Certification", color: "blue", icon: "🤖" },
+                  { title: "Student Essentials", subtitle: "Anthropic Claude", color: "purple", icon: "🧠" },
                   { title: "UI/UX Design Internship", subtitle: "Industry Project (2025)", color: "pink", icon: "🎨" },
                   { title: "Full Stack Web Development", subtitle: "Training Program (2024–2025)", color: "orange", icon: "🌐" }
                 ].map((cert, i) => (
@@ -132,15 +184,15 @@ export default function Achievements() {
             className="lg:col-span-4"
           >
             <div className="bg-[#0f111a] border border-gray-800 rounded-xl p-6 h-full flex flex-col interactive group relative overflow-hidden">
-               <div className="absolute -right-10 -top-10 w-40 h-40 bg-[var(--color-gold)]/5 rounded-full blur-3xl group-hover:bg-[var(--color-gold)]/10 transition-colors" />
+               <div className="absolute -right-10 -top-10 w-40 h-40 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors" />
                
                <h3 className="font-mono text-xs tracking-widest text-gray-400 mb-6 font-bold py-2 border-b border-gray-800 inline-block w-full">
-                 <span className="text-[#f5a623]">{"//"}</span> COMPETITIVE PROGRAMMING
+                 <span className="text-gold">{"//"}</span> COMPETITIVE PROGRAMMING
                </h3>
 
                <div className="flex-1 flex flex-col justify-center">
                  <div className="flex items-center gap-4 mb-8">
-                   <div className="w-16 h-16 rounded-2xl bg-[#ff9c0b]/10 border border-[#ff9c0b]/20 flex items-center justify-center p-3">
+                  <div className="w-16 h-16 rounded-2xl bg-[#ff9c0b]/10 border border-[#ff9c0b]/20 flex items-center justify-center p-3">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" className="w-full h-full object-contain filter invert opacity-90" />
                    </div>
                    <div>

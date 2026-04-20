@@ -53,7 +53,7 @@ export default function Contact() {
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">
             Open to AI/ML internships, collaborations, and interesting problems.
-            Actively looking for roles where I can ship real AI.
+            Actively looking for a role where I can work in real world projects and gain experience.
           </p>
         </div>
 

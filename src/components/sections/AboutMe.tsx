@@ -41,10 +41,10 @@ export default function AboutMe() {
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Name: <span className="text-green-400">&quot;Naveen Kumar C&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Location: <span className="text-green-400">&quot;Coimbatore, Tamil Nadu, India&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> College: <span className="text-green-400">&quot;Sri Shakthi Institute of Engineering & Tech&quot;</span></div>
-              <div className="mb-2"><span className="text-purple-400">{'>'}</span> Degree: <span className="text-green-400">&quot;B.Tech IT — 2023 to 2027 (CGPA: 8.69)&quot;</span></div>
+              <div className="mb-2"><span className="text-purple-400">{'>'}</span> Degree: <span className="text-green-400">&quot;B.Tech IT — 2023 to 2027 (CGPA: 9.73)&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Club: <span className="text-green-400">&quot;Host Lead @ Media Guild&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Internships: <span className="text-green-400">&quot;UI/UX Intern · Python & ML Intern&quot;</span></div>
-              <div className="mb-2"><span className="text-purple-400">{'>'}</span> Status: <span className="text-green-400">&quot;Seeking AI/ML Internship — Available Now&quot;</span></div>
+              <div className="mb-2"><span className="text-purple-400">{'>'}</span> Status: <span className="text-green-400">&quot;Looking for a role where I can work in real world projects and gain experience&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> <span className="text-gray-400">2 Hackathons Participant</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> languages: <span className="text-green-400">&quot;Tamil, English&quot;</span></div>
               <div><span className="text-purple-400">{'>'}</span> fun_fact: <span className="text-green-400">&quot;Loves Solving Quants Sums⚡&quot;</span><span className="inline-block w-2 h-4 ml-1 bg-white animate-[blink_1s_infinite] align-middle" /></div>
@@ -74,11 +74,11 @@ export default function AboutMe() {
             <div className="flex flex-wrap gap-3 mt-2">
               {[
                 { icon: "📜", text: "2 Published Patents", color: "border-amber-500/30 text-amber-500 bg-amber-500/5" },
-                { icon: "🎓", text: "CGPA 8.69", color: "border-green-500/30 text-green-500 bg-green-500/5" },
+                { icon: "🎓", text: "CGPA 9.73", color: "border-green-500/30 text-green-500 bg-green-500/5" },
                 { icon: "🏆", text: "36h Hackathon Builder", color: "border-orange-500/30 text-orange-400 bg-orange-500/5" },
                 { icon: "🤖", text: "AI Agent Specialist", color: "border-purple-500/30 text-purple-400 bg-purple-500/5" },
                 { icon: "🎨", text: "UI/UX + ML Intern", color: "border-pink-500/30 text-pink-400 bg-pink-500/5" },
-                { icon: "🎙️", text: "Host Lead — Media Guild", color: "border-blue-500/30 text-blue-400 bg-blue-500/5" },
+                { icon: "🎙️", text: "Good Communicator — Bold & Confident Speaker", color: "border-blue-500/30 text-blue-400 bg-blue-500/5" },
               ].map((pill, i) => (
                 <div key={i} className={`flex items-center gap-2 px-3 py-1.5 rounded-full border ${pill.color} text-xs font-mono interactive hover:scale-105 transition-transform cursor-default`}>
                   <span>{pill.icon}</span>

@@ -132,7 +132,7 @@ export default function Hero() {
                 { n: "8+", l: "Projects Built" },
                 { n: "2", l: "Patents" },
                 { n: "36h", l: "Hackathon" },
-                { n: "8.69", l: "CGPA" }
+                { n: "9.73", l: "CGPA" }
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="font-sans font-bold text-xl lg:text-2xl text-gradient">{stat.n}</span>

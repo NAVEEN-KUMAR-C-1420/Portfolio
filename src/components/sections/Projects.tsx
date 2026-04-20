@@ -9,6 +9,25 @@ type Category = "ALL" | "AI/ML" | "FULL STACK" | "OPEN SOURCE" | "JAVA/PYTHON";
 
 const projects = [
   {
+    id: "P_00",
+    title: "IT Service Desk Chatbot",
+    type: "AI/ML",
+    emoji: "💬",
+    colorLabel: "sky",
+    badge: "2026 Ticket Triage System",
+    desc: "Built an AI-powered helpdesk chatbot that classifies incoming IT support tickets by priority and category, suggests solutions from a knowledge base using RAG, and auto-escalates unresolved issues — reducing manual triage effort for IT teams.",
+    bullets: [
+      "Designed a full-stack interface with a real-time ticket dashboard",
+      "Conversation history and agent handoff flow",
+      "Deployed on Vercel with a FastAPI backend and Supabase for ticket persistence"
+    ],
+    stack: ["Python", "FastAPI", "Claude API", "React", "Tailwind CSS", "Supabase"],
+    github: "https://github.com/NAVEEN-KUMAR-C-1420",
+    color: "rgba(14,165,233,0.2)",
+    borderColor: "border-sky-500/30",
+    glow: "hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:border-sky-500",
+  },
+  {
     id: "P_01",
     title: "TeleCorp AI Call Center Copilot",
     type: "AI/ML",
