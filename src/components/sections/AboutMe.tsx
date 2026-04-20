@@ -41,7 +41,7 @@ export default function AboutMe() {
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Name: <span className="text-green-400">&quot;Naveen Kumar C&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Location: <span className="text-green-400">&quot;Coimbatore, Tamil Nadu, India&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> College: <span className="text-green-400">&quot;Sri Shakthi Institute of Engineering & Tech&quot;</span></div>
-              <div className="mb-2"><span className="text-purple-400">{'>'}</span> Degree: <span className="text-green-400">&quot;B.Tech IT — 2023 to 2027 (CGPA: 9.73)&quot;</span></div>
+              <div className="mb-2"><span className="text-purple-400">{'>'}</span> Degree: <span className="text-green-400">&quot;B.Tech IT — 2023 to 2027 (CGPA: 8.73)&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Club: <span className="text-green-400">&quot;Host Lead @ Media Guild&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Internships: <span className="text-green-400">&quot;UI/UX Intern · Python & ML Intern&quot;</span></div>
               <div className="mb-2"><span className="text-purple-400">{'>'}</span> Status: <span className="text-green-400">&quot;Looking for a role where I can work in real world projects and gain experience&quot;</span></div>
@@ -74,7 +74,7 @@ export default function AboutMe() {
             <div className="flex flex-wrap gap-3 mt-2">
               {[
                 { icon: "📜", text: "2 Published Patents", color: "border-amber-500/30 text-amber-500 bg-amber-500/5" },
-                { icon: "🎓", text: "CGPA 9.73", color: "border-green-500/30 text-green-500 bg-green-500/5" },
+                { icon: "🎓", text: "CGPA 8.73", color: "border-green-500/30 text-green-500 bg-green-500/5" },
                 { icon: "🏆", text: "36h Hackathon Builder", color: "border-orange-500/30 text-orange-400 bg-orange-500/5" },
                 { icon: "🤖", text: "AI Agent Specialist", color: "border-purple-500/30 text-purple-400 bg-purple-500/5" },
                 { icon: "🎨", text: "UI/UX + ML Intern", color: "border-pink-500/30 text-pink-400 bg-pink-500/5" },

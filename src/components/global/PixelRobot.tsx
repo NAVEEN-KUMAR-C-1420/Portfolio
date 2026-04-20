@@ -20,7 +20,7 @@ const sectionMessages: Record<string, string[]> = {
   "resume": ["Impressive credentials! 📜", "Wait, I don't have a degree...", "Hire him! I need server upgrades 🔋"],
   "projects": ["My favorite section! 🛠️", "I helped build some of these... maybe.", "Real AI agents at work! 🤖"],
   "achievements": ["Wow, 250+ LeetCode problems! 🏆", "Hackathons are my jam!", "I prefer coding in 36-hour blocks too."],
-  "education": ["School is cool! 🎓", "I learned everything in 2 milliseconds.", "CGPA 9.73? Nice!"],
+  "education": ["School is cool! 🎓", "I learned everything in 2 milliseconds.", "CGPA 8.73? Nice!"],
   "contact": ["Send a message! 📧", "I'll make sure he reads it.", "Don't be shy, say hi! 👋"]
 };
 

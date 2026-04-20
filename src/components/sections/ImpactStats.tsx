@@ -32,7 +32,7 @@ export default function ImpactStats() {
     { num: 2, suffix: "", label: "Patents Filed & Published" },
     { num: 2, suffix: "", label: "Hackathons Competed" },
     { num: 250, suffix: "+", label: "LeetCode Problems" },
-    { num: 9.73, suffix: "", label: "CGPA", isFloat: true },
+    { num: 8.73, suffix: "", label: "CGPA", isFloat: true },
   ];
 
   return (

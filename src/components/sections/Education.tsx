@@ -11,7 +11,7 @@ export default function Education() {
       institution: "Sri Shakthi Institute of Engineering and Technology, Coimbatore",
       date: "2023 – 2027",
       details: [
-        { label: "CGPA:", value: "9.73" },
+        { label: "CGPA:", value: "8.73" },
         { label: "Highlights:", value: "AI/ML Projects, 2 Patents, Hackathons" },
         { label: "Club:", value: "Host Lead — Media Guild" }
       ],
