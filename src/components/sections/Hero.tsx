@@ -8,8 +8,22 @@ import { Github, Linkedin } from "@/components/icons";
 const typewriterLines = [
   "Software Engineer",
   "AI Engineer",
-  "Full Stack Developer"
+  "Forward Deploy Engineer"
 ];
+
+const hoverClasses: Record<string, string> = {
+  GitHub: "hover:border-gray-500 hover:shadow-[0_0_15px_rgba(107,114,128,0.25)]",
+  LinkedIn: "hover:border-sky-500 hover:shadow-[0_0_15px_rgba(14,165,233,0.25)]",
+  LeetCode: "hover:border-amber-500 hover:shadow-[0_0_15px_rgba(245,166,35,0.25)]",
+  Email: "hover:border-pink-500 hover:shadow-[0_0_15px_rgba(236,72,153,0.25)]",
+};
+
+const iconHoverClasses: Record<string, string> = {
+  GitHub: "group-hover:text-gray-400",
+  LinkedIn: "group-hover:text-sky-400",
+  LeetCode: "group-hover:text-amber-400",
+  Email: "group-hover:text-pink-400",
+};
 
 export default function Hero() {
   const [currentLineIdx, setCurrentLineIdx] = useState(0);
@@ -67,7 +81,7 @@ export default function Hero() {
                 <span className="text-gradient inline-block mt-1">Naveen Kumar C</span>
               </h1>
               <p className="font-sans text-base sm:text-lg lg:text-xl text-gray-300 font-medium leading-relaxed mt-1">
-                I turn ideas into real products, Building impactful digital products with code and creativity.
+                I turn ideas into real products, Building impactful digital products with code and creativity. A technical leader who bridges the gap between engineering and clear communication
               </p>
             </div>
 
@@ -78,30 +92,27 @@ export default function Hero() {
 
             <div className="flex gap-4 mt-4">
               {[
-                { icon: Github, href: "https://github.com/NAVEEN-KUMAR-C-1420", color: "#6b7280" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/naveen-kumar-1420c/", color: "#0ea5e9" },
-                { icon: Code2, href: "https://leetcode.com/u/ObJQzoDJbs/", color: "#f5a623" },
-                { icon: Mail, href: "mailto:naveensiddhu52@gmail.com", color: "#ec4899" },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="interactive w-10 h-10 rounded lg flex items-center justify-center bg-[#111827] border border-gray-800 transition-all hover:-translate-y-1 group"
-                  style={{ '--hover-color': social.color } as React.CSSProperties}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = social.color;
-                    e.currentTarget.style.boxShadow = `0 0 15px ${social.color}40`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "#1f2937";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <social.icon strokeWidth={1.5} className="w-5 h-5 text-gray-400 group-hover:text-(--hover-color) transition-colors" />
-                </a>
-              ))}
+                { name: "GitHub", icon: Github, href: "https://github.com/NAVEEN-KUMAR-C-1420" },
+                { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/naveen-kumar-1420c/" },
+                { name: "LeetCode", icon: Code2, href: "https://leetcode.com/u/ObJQzoDJbs/" },
+                { name: "Email", icon: Mail, href: "mailto:naveensiddhu52@gmail.com" },
+              ].map((social, i) => {
+                const hoverStyle = hoverClasses[social.name] || "";
+                const iconStyle = iconHoverClasses[social.name] || "";
+                return (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`interactive w-10 h-10 rounded flex items-center justify-center bg-[#111827] border border-gray-800 transition-all hover:-translate-y-1 group ${hoverStyle}`}
+                    title={`View Naveen's ${social.name}`}
+                    aria-label={`View Naveen's ${social.name}`}
+                  >
+                    <social.icon strokeWidth={1.5} className={`w-5 h-5 text-gray-400 transition-colors ${iconStyle}`} />
+                  </a>
+                );
+              })}
             </div>
 
             <div className="flex flex-wrap gap-4 mt-2">
@@ -169,22 +180,22 @@ export default function Hero() {
                 <path d="M 205 320 L 275 320 L 265 380 L 215 380 Z" fill="#4c1d95" opacity="0.4" />
 
                 {/* Head dynamically turning towards cursor */}
-                <g className="origin-[240px_245px]" style={{ transform: `rotate(${mousePos.x * 6}deg)` }}>
+                <g className="origin-[240px_245px]" transform={`rotate(${mousePos.x * 6}, 240, 245)`}>
                   {/* Hair back */}
                   <path d="M 195 245 C 190 200, 220 180, 240 180 C 260 180, 290 200, 285 245 L 295 220 L 275 190 L 260 170 L 240 160 L 220 170 L 205 190 L 185 220 Z" fill="#1f2937" />
-                  
+
                   {/* Face base */}
-                  <circle cx="240" cy="245" r="45" fill="#fcd34d" style={{ transform: `translate(${mousePos.x * 6}px, ${mousePos.y * 6}px)` }} />
-                  
+                  <circle cx="240" cy="245" r="45" fill="#fcd34d" transform={`translate(${mousePos.x * 6}, ${mousePos.y * 6})`} />
+
                   {/* Facial Features Group */}
-                  <g style={{ transform: `translate(${mousePos.x * 12}px, ${mousePos.y * 12}px)` }}>
+                  <g transform={`translate(${mousePos.x * 12}, ${mousePos.y * 12})`}>
                     {/* Glasses */}
                     <g>
                       <circle cx="220" cy="240" r="14" fill="white" stroke="#374151" strokeWidth="3" />
                       <circle cx="260" cy="240" r="14" fill="white" stroke="#374151" strokeWidth="3" />
                       <line x1="234" y1="240" x2="246" y2="240" stroke="#374151" strokeWidth="3" />
                       {/* Thunder Pupils */}
-                      <g style={{ transform: `translate(${mousePos.x * 5}px, ${mousePos.y * 5}px)` }}>
+                      <g transform={`translate(${mousePos.x * 5}, ${mousePos.y * 5})`}>
                         {/* Glow */}
                         <polygon points="222,234 216,241 220,241 218,247 225,239 221,239" fill="#fef08a" opacity="0.5" transform="scale(1.2)" style={{ transformOrigin: "220px 240px" }} />
                         <polygon points="262,234 256,241 260,241 258,247 265,239 261,239" fill="#fef08a" opacity="0.5" transform="scale(1.2)" style={{ transformOrigin: "260px 240px" }} />

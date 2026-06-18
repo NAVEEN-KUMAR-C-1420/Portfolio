@@ -3,17 +3,20 @@
 
 import { motion } from "framer-motion";
 
+const colorMap: Record<string, { border: string; hoverBg: string }> = {
+  blue: { border: "border-blue-500/20", hoverBg: "hover:bg-blue-500/5" },
+  purple: { border: "border-purple-500/20", hoverBg: "hover:bg-purple-500/5" },
+  pink: { border: "border-pink-500/20", hoverBg: "hover:bg-pink-500/5" },
+  orange: { border: "border-orange-500/20", hoverBg: "hover:bg-orange-500/5" },
+  yellow: { border: "border-yellow-500/20", hoverBg: "hover:bg-yellow-500/5" },
+  green: { border: "border-green-500/20", hoverBg: "hover:bg-green-500/5" },
+};
+
 export default function Achievements() {
   return (
     <section id="achievements" className="py-24 relative z-10 w-full overflow-hidden">
       {/* Starfield Background */}
-      <div 
-        className="absolute inset-0 z-0 bg-transparent opacity-40 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)), radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)), radial-gradient(1px 1px at 50px 160px, #ffffff, rgba(0,0,0,0)), radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)), radial-gradient(1px 1px at 130px 80px, #ffffff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 160px 120px, #ffffff, rgba(0,0,0,0))',
-          backgroundSize: '200px 200px'
-        }}
-      />
+      <div className="absolute inset-0 z-0 bg-transparent opacity-40 pointer-events-none starfield" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="flex items-center gap-4 mb-16 relative">
@@ -97,8 +100,7 @@ export default function Achievements() {
                 <span className="text-xl">🎙️</span> LEADERSHIP & MENTORSHIP
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-                <div className="hidden md:block absolute top-4.5 left-5 right-5 h-0.5 bg-gray-800 z-0" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
                 
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -140,6 +142,20 @@ export default function Achievements() {
                   <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-[#10b981] transition-colors">Tech Mentor</h4>
                   <p className="text-sm text-gray-400 leading-relaxed font-mono">Proactively guide and mentor junior students — conducting informal sessions on tech, confidence-building, and communication.</p>
                 </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="flex-1 relative z-10 bg-[#0a0a14] border border-[#0ea5e9]/30 rounded-lg p-6 group interactive hover:border-[#0ea5e9]"
+                >
+                  <div className="absolute -top-3 left-6 w-6 h-6 bg-[#0a0a14] border-2 border-[#0ea5e9] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform">
+                     <div className="w-2 h-2 bg-[#0ea5e9] rounded-full" />
+                  </div>
+                  <h4 className="font-sans font-bold text-white text-lg mt-3 mb-2 group-hover:text-[#0ea5e9] transition-colors">Forward-Deployed Mindset</h4>
+                  <p className="text-sm text-gray-400 leading-relaxed font-mono">Combining full-stack engineering curiosity with strong oratorical skills. Equipped to act as the bridge between deep technical codebases and client success by translating user feedback into scalable features and providing clear, empathetic technical guidance.</p>
+                </motion.div>
               </div>
             </div>
 
@@ -154,23 +170,28 @@ export default function Achievements() {
                   { title: "IBM Build AI Agent", subtitle: "IBM Certification", color: "blue", icon: "🤖" },
                   { title: "Student Essentials", subtitle: "Anthropic Claude", color: "purple", icon: "🧠" },
                   { title: "UI/UX Design Internship", subtitle: "Industry Project (2025)", color: "pink", icon: "🎨" },
-                  { title: "Full Stack Web Development", subtitle: "Training Program (2024–2025)", color: "orange", icon: "🌐" }
-                ].map((cert, i) => (
-                  <motion.div
-                    key={cert.title}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className={`bg-[#0a0a14]/60 border border-${cert.color}-500/20 p-4 rounded hover:bg-${cert.color}-500/5 transition-colors interactive flex items-start gap-4`}
-                  >
-                    <div className="text-2xl mt-1">{cert.icon}</div>
-                    <div>
-                      <h4 className="font-sans font-bold text-white text-[15px]">{cert.title}</h4>
-                      <p className="font-mono text-[10px] text-gray-500 mt-1 uppercase">{cert.subtitle}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                  { title: "Full Stack Web Development", subtitle: "Training Program (2024–2025)", color: "orange", icon: "🌐" },
+                  { title: "Lean Six Sigma Yellow Belt", subtitle: "Process Optimization & Quality Management", color: "yellow", icon: "📊" },
+                  { title: "Prompt Engineering", subtitle: "Generative AI & LLM Optimization", color: "green", icon: "✍️" }
+                ].map((cert, i) => {
+                  const style = colorMap[cert.color] || colorMap.blue;
+                  return (
+                    <motion.div
+                      key={cert.title}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className={`bg-[#0a0a14]/60 border ${style.border} ${style.hoverBg} p-4 rounded transition-colors interactive flex items-start gap-4`}
+                    >
+                      <div className="text-2xl mt-1">{cert.icon}</div>
+                      <div>
+                        <h4 className="font-sans font-bold text-white text-[15px]">{cert.title}</h4>
+                        <p className="font-mono text-[10px] text-gray-500 mt-1 uppercase">{cert.subtitle}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
@@ -196,7 +217,7 @@ export default function Achievements() {
                       <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" className="w-full h-full object-contain filter invert opacity-90" />
                    </div>
                    <div>
-                     <div className="font-sans font-black text-4xl text-white">250+</div>
+                     <div className="font-sans font-black text-4xl text-white">330</div>
                      <div className="font-mono text-xs text-gray-400 tracking-wider">PROBLEMS SOLVED</div>
                    </div>
                  </div>
@@ -204,9 +225,9 @@ export default function Achievements() {
                  {/* Custom progress bars */}
                  <div className="space-y-4 mb-8">
                    {[
-                     { label: "Easy", count: 120, total: 250, color: "bg-[#00b8a3]" },
-                     { label: "Medium", count: 105, total: 250, color: "bg-[#ffc01e]" },
-                     { label: "Hard", count: 25, total: 250, color: "bg-[#ff375f]" }
+                     { label: "Easy", count: 163, total: 330, color: "bg-[#00b8a3]" },
+                     { label: "Medium", count: 135, total: 330, color: "bg-[#ffc01e]" },
+                     { label: "Hard", count: 32, total: 330, color: "bg-[#ff375f]" }
                    ].map(lvl => (
                      <div key={lvl.label}>
                        <div className="flex justify-between font-mono text-[11px] mb-1.5 text-gray-300">

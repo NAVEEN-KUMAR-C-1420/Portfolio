@@ -16,7 +16,7 @@ export default function Internships() {
           <div className="h-[1px] flex-1 bg-gradient-to-r from-purple-500/20 to-transparent" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* UI/UX Intern (Pink) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -48,7 +48,7 @@ export default function Internships() {
             </ul>
           </motion.div>
 
-          {/* ML Intern (Purple) */}
+          {/* Software Intern (Purple) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,19 +61,61 @@ export default function Internships() {
             <div className="flex justify-between items-start mb-6 relative z-10">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-purple-500/10 text-purple-500 text-2xl border border-purple-500/20">
-                  🤖
+                  💻
                 </div>
                 <div>
-                  <h3 className="font-sans font-bold text-2xl text-white">Python & ML Intern</h3>
+                  <h3 className="font-sans font-bold text-2xl text-white">Software Intern</h3>
                   <div className="font-mono text-xs text-purple-400 mt-1">Aug 2024</div>
                 </div>
               </div>
             </div>
             
             <ul className="space-y-3 relative z-10">
-              {["Learned ML and Deep Learning fundamentals under expert guidance", "Built mini-projects involving data preprocessing and model training", "Gained exposure to real-world AI workflows"].map((task, i) => (
+              {[
+                "Learned ML and Deep Learning fundamentals under expert guidance",
+                "Built mini-projects involving data preprocessing and model training",
+                "Gained exposure to real-world AI workflows",
+                "Developed and optimized Python backend APIs, enhancing query response efficiency.",
+                "Collaborated with cross-functional teams to integrate software features and write unit tests."
+              ].map((task, i) => (
                 <li key={i} className="flex gap-3 text-gray-300 text-sm">
                   <span className="text-purple-500 shrink-0">▹</span>
+                  <span>{task}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Data Analyst Intern (Blue) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="group relative bg-[#0a0a14] border border-blue-500/30 rounded-xl p-8 hover:-translate-y-2 transition-transform duration-300 interactive overflow-hidden"
+          >
+             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full blur-2xl group-hover:bg-blue-500/20 transition-colors" />
+            
+            <div className="flex justify-between items-start mb-6 relative z-10">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-500/10 text-blue-500 text-2xl border border-blue-500/20">
+                  📊
+                </div>
+                <div>
+                  <h3 className="font-sans font-bold text-2xl text-white">Data Analyst Intern</h3>
+                  <div className="font-mono text-xs text-blue-400 mt-1">Jun 2025 – Jul 2025</div>
+                </div>
+              </div>
+            </div>
+            
+            <ul className="space-y-3 relative z-10">
+              {[
+                "Processed and cleaned raw organizational data using Python (Pandas, NumPy) and SQL.",
+                "Constructed dashboards and charts to visualize key performance trends and operational patterns.",
+                "Delivered data-driven reports that identified optimization opportunities, reducing report generation time."
+              ].map((task, i) => (
+                <li key={i} className="flex gap-3 text-gray-300 text-sm">
+                  <span className="text-blue-500 shrink-0">▹</span>
                   <span>{task}</span>
                 </li>
               ))}

@@ -11,7 +11,6 @@ export default function Skills() {
       skills: [
         { name: "Python", icon: "devicon-python-plain text-[#3776AB]" },
         { name: "Java", icon: "devicon-java-plain text-[#007396]" },
-        { name: "TypeScript", icon: "devicon-typescript-plain text-[#3178C6]" },
         { name: "JavaScript", icon: "devicon-javascript-plain text-[#F7DF1E]" },
         { name: "C", icon: "devicon-c-plain text-[#A8B9CC]" },
       ]
@@ -25,8 +24,7 @@ export default function Skills() {
         { name: "Claude API", icon: "🤖" },
         { name: "GPT / Gemini", icon: "✨" },
         { name: "watsonx.ai", icon: "🟦" },
-        { name: "LangChain", icon: "🔗" },
-        { name: "Scikit-learn", icon: "🧠" },
+        { name: "LangChain,Langgraph", icon: "🔗" },
       ]
     },
     {
@@ -48,7 +46,6 @@ export default function Skills() {
       skills: [
         { name: "FastAPI", icon: "devicon-fastapi-plain text-[#009688]" },
         { name: "Node.js", icon: "devicon-nodejs-plain text-[#339933]" },
-        { name: "Express.js", icon: "devicon-express-original text-white" },
         { name: "MySQL", icon: "devicon-mysql-plain text-[#4479A1]" },
         { name: "MongoDB", icon: "devicon-mongodb-plain text-[#47A248]" },
         { name: "Supabase", icon: "⚡" },
@@ -78,7 +75,7 @@ export default function Skills() {
         { name: "DBMS", icon: "🗄️" },
         { name: "OS", icon: "💻" },
         { name: "SDLC", icon: "🔄" },
-        { name: "MVC Architecture", icon: "🏛️" },
+        { name: "MCP Architecture", icon: "🏛️" },
       ]
     }
   ];
@@ -97,28 +94,28 @@ export default function Skills() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
+
           {/* LEFT - ORBIT */}
           <div className="relative w-full aspect-square max-w-[400px] mx-auto hidden lg:flex items-center justify-center">
             {/* Center Sphere */}
             <div className="absolute w-24 h-24 rounded-full bg-[var(--grad)] z-10 flex items-center justify-center shadow-[0_0_30px_rgba(236,72,153,0.5)] animate-pulse">
-              <span className="font-mono text-xs font-bold text-white text-center leading-tight tracking-wider">FULL STACK<br/>AI DEV</span>
+              <span className="font-mono text-xs font-bold text-white text-center leading-tight tracking-wider">FULL STACK<br />AI DEV</span>
             </div>
 
             {/* Orbit 1 */}
             <div className="absolute w-[240px] h-[240px] rounded-full border border-dashed border-purple-500/30 animate-[spin_12s_linear_infinite]" />
             <div className="absolute w-[240px] h-[240px] animate-[spin_12s_linear_infinite]">
               <div className="absolute top-0 left-1/2 -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#111827] border border-blue-500 flex items-center justify-center animate-[spin_12s_linear_infinite_reverse]">
-                <span className="devicon-python-plain text-[#3776AB] text-lg"/>
+                <span className="devicon-python-plain text-[#3776AB] text-lg" />
               </div>
               <div className="absolute bottom-0 left-1/2 -ml-4 -mb-4 w-8 h-8 rounded-full bg-[#111827] border border-cyan-500 flex items-center justify-center animate-[spin_12s_linear_infinite_reverse]">
-                <span className="devicon-react-original text-[#61DAFB] text-lg"/>
+                <span className="devicon-react-original text-[#61DAFB] text-lg" />
               </div>
               <div className="absolute left-0 top-1/2 -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#111827] border border-green-500 flex items-center justify-center animate-[spin_12s_linear_infinite_reverse]">
-                <span className="devicon-nodejs-plain text-[#339933] text-lg"/>
+                <span className="devicon-nodejs-plain text-[#339933] text-lg" />
               </div>
               <div className="absolute right-0 top-1/2 -mr-4 -mt-4 w-8 h-8 rounded-full bg-[#111827] border border-white flex items-center justify-center animate-[spin_12s_linear_infinite_reverse]">
-                <span className="devicon-nextjs-plain text-white text-lg"/>
+                <span className="devicon-nextjs-plain text-white text-lg" />
               </div>
             </div>
 
@@ -126,13 +123,13 @@ export default function Skills() {
             <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
             <div className="absolute w-[360px] h-[360px] animate-[spin_18s_linear_infinite_reverse]">
               <div className="absolute top-0 left-1/2 -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#111827] border border-orange-500 flex items-center justify-center animate-[spin_18s_linear_infinite]">
-                <span className="devicon-java-plain text-[#007396] text-lg"/>
+                <span className="devicon-java-plain text-[#007396] text-lg" />
               </div>
               <div className="absolute bottom-0 left-1/2 -ml-4 -mb-4 w-8 h-8 rounded-full bg-[#111827] border border-green-500 flex items-center justify-center animate-[spin_18s_linear_infinite]">
-                <span className="devicon-mongodb-plain text-[#47A248] text-lg"/>
+                <span className="devicon-mongodb-plain text-[#47A248] text-lg" />
               </div>
               <div className="absolute left-0 top-1/2 -mt-4 -ml-4 w-8 h-8 rounded-full bg-[#111827] border border-blue-400 flex items-center justify-center animate-[spin_18s_linear_infinite]">
-                <span className="devicon-docker-plain text-[#2496ED] text-lg"/>
+                <span className="devicon-docker-plain text-[#2496ED] text-lg" />
               </div>
               <div className="absolute right-0 top-1/2 -mt-4 -mr-4 w-8 h-8 rounded-full bg-[#111827] border border-purple-400 flex items-center justify-center animate-[spin_18s_linear_infinite]">
                 <span className="text-sm">🤖</span>

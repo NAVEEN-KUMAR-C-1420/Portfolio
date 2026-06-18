@@ -7,42 +7,52 @@ import { Github } from "@/components/icons";
 
 type Category = "ALL" | "AI/ML" | "FULL STACK" | "OPEN SOURCE" | "JAVA/PYTHON";
 
+const pulseBgClasses: Record<string, string> = {
+  sky: "bg-sky-500",
+  purple: "bg-purple-500",
+  violet: "bg-violet-500",
+  indigo: "bg-indigo-500",
+  pink: "bg-pink-500",
+  orange: "bg-orange-500",
+  amber: "bg-amber-500",
+  teal: "bg-teal-500",
+  green: "bg-green-500",
+};
+
 const projects = [
   {
     id: "P_00",
-    title: "IT Service Desk Chatbot",
+    title: "Financial & Investment Advisory Agent",
     type: "AI/ML",
-    emoji: "💬",
+    emoji: "📈",
     colorLabel: "sky",
-    badge: "2026 Ticket Triage System",
-    desc: "Built an AI-powered helpdesk chatbot that classifies incoming IT support tickets by priority and category, suggests solutions from a knowledge base using RAG, and auto-escalates unresolved issues — reducing manual triage effort for IT teams.",
+    badge: "AI Financial Advisor",
+    desc: "Built an AI-powered Financial & Investment Advisory Agent using Python, Google ADK, and Gemini API for personalized investment recommendations and financial analysis.",
     bullets: [
-      "Designed a full-stack interface with a real-time ticket dashboard",
-      "Conversation history and agent handoff flow",
-      "Deployed on Vercel with a FastAPI backend and Supabase for ticket persistence"
+      "Engineered personalized investment recommendations and strategies using Google ADK models.",
+      "Developed financial analysis workflows in Python to extract insights from market data.",
+      "Optimized prompts for Google Gemini API to ensure contextual advisory accuracy."
     ],
-    stack: ["Python", "FastAPI", "Claude API", "React", "Tailwind CSS", "Supabase"],
-    github: "https://github.com/NAVEEN-KUMAR-C-1420",
+    stack: ["Python", "Google ADK", "Gemini API", "Prompt Engineering"],
+    github: "https://github.com/NAVEEN-KUMAR-C-1420/Finance_AI_Agent",
     color: "rgba(14,165,233,0.2)",
     borderColor: "border-sky-500/30",
     glow: "hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:border-sky-500",
   },
   {
     id: "P_01",
-    title: "TeleCorp AI Call Center Copilot",
+    title: "Chatbot with RAG",
     type: "AI/ML",
-    emoji: "🤖",
+    emoji: "💬",
     colorLabel: "purple",
-    badge: "Hackathon Winner",
-    desc: "Full-stack AI system for UK telecom call centers. Built in 36 hours.",
+    badge: "RAG Gym Guide",
+    desc: "An intelligent city gym assistant powered by Retrieval-Augmented Generation (RAG) that indexes all gyms in the city and answers user queries accurately.",
     bullets: [
-      "Live call transcription with real-time AI assistance overlay",
-      "RAG-powered customer data lookup using embeddings",
-      "Tamil/Tanglish multilingual NLP support",
-      "Multi-tenant architecture (TeleCorp + FinBank clients)",
-      "AI Silent Mode for automatic escalation"
+      "Built a RAG system indexing city gyms, pricing, schedules, and training services.",
+      "Leveraged embeddings and vector search to retrieve relevant gym info in real-time.",
+      "Created a conversational interface that resolves multi-turn fitness queries."
     ],
-    stack: ["Python", "FastAPI", "React 18", "TypeScript", "Ollama", "SQLite", "Tailwind CSS"],
+    stack: ["Python", "FastAPI", "LangChain", "ChromaDB", "RAG"],
     github: "https://github.com/NAVEEN-KUMAR-C-1420",
     color: "rgba(124,58,237,0.2)",
     borderColor: "border-purple-500/30",
@@ -50,7 +60,7 @@ const projects = [
   },
   {
     id: "P_02",
-    title: "AI Form Filling Assistant",
+    title: "Automation Form Filling Assistant",
     type: "AI/ML",
     emoji: "📝",
     colorLabel: "violet",
@@ -110,13 +120,13 @@ const projects = [
     type: "FULL STACK",
     emoji: "💡",
     colorLabel: "orange",
-    desc: "End-to-end platform for students to share micro-lessons, quick tips, and Q&A posts. Designed and built full UI/UX to backend.",
+    desc: "Designed SkillConnect, an interactive platform for students to share micro-lessons, quick tips, and Q&A posts. Created high-fidelity mockups and user flows as part of a UI/UX design internship.",
     bullets: [
-      "Complete wireframe and prototype design",
-      "Authentication and resource upload system",
-      "Scalable content distribution database schema"
+      "Designed high-fidelity wireframes and interactive prototypes in Figma.",
+      "Conducted user research and mapping to optimize navigation and layout structure.",
+      "Delivered a complete UI design spec for cross-functional developer collaboration."
     ],
-    stack: ["MERN Stack", "MongoDB", "Express", "React", "Node.js"],
+    stack: ["Figma", "UI/UX Design", "Wireframing", "Prototyping"],
     github: "https://github.com/NAVEEN-KUMAR-C-1420",
     color: "rgba(249,115,22,0.2)",
     borderColor: "border-orange-500/30",
@@ -232,7 +242,7 @@ export default function Projects() {
                   <div className="text-3xl group-hover:animate-bounce">{p.emoji}</div>
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-[9px] text-gray-500 tracking-widest">{p.id}</span>
-                    <span className={`w-2 h-2 rounded-full animate-pulse bg-${p.colorLabel}-500`} style={{ backgroundColor: p.color.replace('0.2', '1') }} />
+                    <span className={`w-2 h-2 rounded-full animate-pulse ${pulseBgClasses[p.colorLabel] || "bg-purple-500"}`} />
                   </div>
                 </div>
 
@@ -273,6 +283,8 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="interactive p-2 border border-white/10 rounded hover:border-[var(--grad)] hover:text-white text-gray-400 transition-colors"
+                    title="View GitHub Repository"
+                    aria-label="View GitHub Repository"
                   >
                     <Github className="w-4 h-4" />
                   </a>
@@ -306,6 +318,8 @@ export default function Projects() {
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="interactive absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+                  title="Close modal"
+                  aria-label="Close modal"
                 >
                   <X className="w-6 h-6" />
                 </button>
