@@ -197,7 +197,7 @@ export default function Achievements() {
 
           </div>
 
-          {/* Right Column: Leetcode Card */}
+          {/* Right Column: Growth & Soft Skills Card */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -205,57 +205,92 @@ export default function Achievements() {
             className="lg:col-span-4"
           >
             <div className="bg-[#0f111a] border border-gray-800 rounded-xl p-6 h-full flex flex-col interactive group relative overflow-hidden">
-               <div className="absolute -right-10 -top-10 w-40 h-40 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors" />
+               <div className="absolute -right-10 -top-10 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-colors" />
                
                <h3 className="font-mono text-xs tracking-widest text-gray-400 mb-6 font-bold py-2 border-b border-gray-800 inline-block w-full">
-                 <span className="text-gold">{"//"}</span> COMPETITIVE PROGRAMMING
+                 <span className="text-purple-500">{"//"}</span> GROWTH & SOFT SKILLS
                </h3>
 
-               <div className="flex-1 flex flex-col justify-center">
-                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-[#ff9c0b]/10 border border-[#ff9c0b]/20 flex items-center justify-center p-3">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" className="w-full h-full object-contain filter invert opacity-90" />
-                   </div>
-                   <div>
-                     <div className="font-sans font-black text-4xl text-white">330</div>
-                     <div className="font-mono text-xs text-gray-400 tracking-wider">PROBLEMS SOLVED</div>
+               <div className="flex-1 flex flex-col gap-6">
+                 {/* Soft Skills Section */}
+                 <div>
+                   <h4 className="font-mono text-[11px] uppercase tracking-wider text-purple-400 mb-3 flex items-center gap-1.5 font-bold">
+                     <span>💡</span> Core Strengths
+                   </h4>
+                   <div className="space-y-2.5">
+                     {[
+                       "Technical Oratory / Public Speaking",
+                       "Active Listening & Empathy",
+                       "Technical Mentorship / Peer Coaching",
+                       "Team Alignment"
+                     ].map((skill, index) => (
+                       <motion.div
+                         key={skill}
+                         initial={{ opacity: 0, x: -10 }}
+                         whileInView={{ opacity: 1, x: 0 }}
+                         viewport={{ once: true }}
+                         transition={{ delay: index * 0.05 }}
+                         className="flex items-center gap-2 bg-white/5 border border-white/5 rounded-lg px-3 py-2 hover:border-purple-500/30 hover:bg-purple-500/5 transition-all group/skill"
+                       >
+                         <div className="w-1.5 h-1.5 rounded-full bg-purple-500 group-hover/skill:scale-125 transition-transform" />
+                         <span className="font-sans text-xs font-medium text-gray-300 group-hover/skill:text-white transition-colors">{skill}</span>
+                       </motion.div>
+                     ))}
                    </div>
                  </div>
 
-                 {/* Custom progress bars */}
-                 <div className="space-y-4 mb-8">
-                   {[
-                     { label: "Easy", count: 163, total: 330, color: "bg-[#00b8a3]" },
-                     { label: "Medium", count: 135, total: 330, color: "bg-[#ffc01e]" },
-                     { label: "Hard", count: 32, total: 330, color: "bg-[#ff375f]" }
-                   ].map(lvl => (
-                     <div key={lvl.label}>
-                       <div className="flex justify-between font-mono text-[11px] mb-1.5 text-gray-300">
-                         <span>{lvl.label}</span>
-                         <span className="text-white font-bold">{lvl.count}</span>
-                       </div>
-                       <div className="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                          <motion.div 
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${(lvl.count / lvl.total) * 100}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.2 }}
-                            className={`h-full ${lvl.color}`} 
-                          />
+                 {/* Bookshelf Section */}
+                 <div>
+                   <h4 className="font-mono text-[11px] uppercase tracking-wider text-amber-400 mb-3 flex items-center gap-1.5 font-bold">
+                     <span>📚</span> Bookshelf
+                   </h4>
+                   
+                   <div className="space-y-4">
+                     {/* Non-Fiction / Self-Improvement */}
+                     <div>
+                       <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest block mb-2">Self-Improvement</span>
+                       <div className="flex flex-wrap gap-1.5">
+                         {[
+                           "Ikigai",
+                           "Atomic Habits",
+                           "The Subtle Art",
+                           "Rich Dad Poor Dad",
+                           "You Live Only Once",
+                           "Alchemist",
+                           "Stop Overthinking"
+                         ].map((book) => (
+                           <span 
+                             key={book} 
+                             className="font-sans text-[11px] bg-amber-500/10 border border-amber-500/20 text-amber-300 rounded px-2.5 py-1 hover:border-amber-400 hover:bg-amber-500/20 transition-all cursor-default"
+                           >
+                             {book}
+                           </span>
+                         ))}
                        </div>
                      </div>
-                   ))}
+
+                     {/* Fiction */}
+                     <div>
+                       <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest block mb-2">Fiction</span>
+                       <div className="flex flex-wrap gap-1.5">
+                         {[
+                           "It Ends with Us",
+                           "It Starts with Us",
+                           "Ugly Love",
+                           "2 States"
+                         ].map((book) => (
+                           <span 
+                             key={book} 
+                             className="font-sans text-[11px] bg-pink-500/10 border border-pink-500/20 text-pink-300 rounded px-2.5 py-1 hover:border-pink-400 hover:bg-pink-500/20 transition-all cursor-default"
+                           >
+                             {book}
+                           </span>
+                         ))}
+                       </div>
+                     </div>
+                   </div>
                  </div>
                </div>
-
-               <a 
-                 href="https://leetcode.com/u/ObJQzoDJbs/" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#ff9c0b]/50 rounded text-center font-sans font-bold text-sm text-gray-300 hover:text-white transition-all flex items-center justify-center gap-2 tracking-wider mt-auto"
-               >
-                 VIEW PROFILE ↗
-               </a>
             </div>
           </motion.div>
 
